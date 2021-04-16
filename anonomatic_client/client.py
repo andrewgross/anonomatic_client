@@ -10,7 +10,7 @@ class Client(object):
     A Client for interacting with the Anonomatic API
     """
 
-    def __init__(self, account_id: str, api_key: str, api_url: Optional[str] = "https://api.piivault.com"):
+    def __init__(self, account_id: str, api_key: str, api_url: Optional[str] = "https://api.anonomatic.com"):
         self.account_id = account_id
         self.api_key = api_key
         self.api_url = api_url
