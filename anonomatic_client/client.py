@@ -49,7 +49,6 @@ class Client(object):
         data: dictionary of JSON data for the request
         """
         full_url = urllib.parse.urljoin(self.api_url, url)
-        import pdb; pdb.set_trace()
         headers = {"Authorization": f"Bearer {self.api_token}"}
         resp = requests.put(full_url, headers=headers, json=data)
         return self._handle_response(resp)
