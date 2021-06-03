@@ -41,9 +41,8 @@ install_deps:
 publish: clean tag
 	@if [ -e "$$HOME/.pypirc" ]; then \
 		echo "Uploading to '$(CUSTOM_PIP_INDEX)'"; \
-		python setup.py sdist upload -r "$(CUSTOM_PIP_INDEX)"; \
-		python setup.py bdist_wheel upload -r "$(CUSTOM_PIP_INDEX)"; \
-		python3 setup.py bdist_wheel upload -r "$(CUSTOM_PIP_INDEX)"; \
+		python -m build; \
+		python -m twine upload --repository "$(CUSTOM_PIP_INDEX)" dist/*
 	else \
 		echo "You should create a file called '.pypirc' under your home dir.\n"; \
 		echo "That's the right place to configure 'pypi' repos.\n"; \
