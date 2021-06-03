@@ -11,14 +11,14 @@ if __name__ == "__main__":
 
     setup(
         name="anonomatic_client",
-        version="0.0.1",
+        version="0.0.2",
         author="Andrew Gross",
         author_email="andrew.w.gross@gmail.com",
         description="Simple Anonomatic Client",
         long_description=readme + '\n\n' + changelog,
         long_description_content_type="text/markdown",
         url="https://github.com/andrewgross/anonomatic_client",
-        packages=find_packages(where="anonomatic_client"),
+        packages=find_packages(exclude=["*tests*"]),
         install_requires=[
             "requests>=2.0.0"
         ],
